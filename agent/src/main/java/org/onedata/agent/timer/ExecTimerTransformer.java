@@ -41,6 +41,9 @@ public class ExecTimerTransformer implements ClassFileTransformer {
     @Override
     public byte[] transform(ClassLoader loader, String className, Class<?> classBeingRedefined, ProtectionDomain protectionDomain, byte[] classfileBuffer) {
         try {
+            if (className != null && className.contains("HelloController")) {
+                System.out.println("==" + className + "==");
+            }
             //第一步：读取类的字节码流
             ClassReader reader = new ClassReader(classfileBuffer);
             //第二步：创建操作字节流值对象，ClassWriter.COMPUTE_MAXS:表示自动计算栈大小

@@ -43,7 +43,9 @@ public class AgentStarter {
                 return;
             }
             //添加字节码转换器
-            instrumentation.addTransformer(new ExecTimerTransformer(exeCmd));
+            instrumentation.addTransformer(new ExecTimerTransformer(exeCmd), true);
+            Class<?> targetClass = Class.forName("org.onedata.jvmtarget.controller.HelloController");
+            instrumentation.retransformClasses(targetClass);
         } catch (Exception e) {
             LOG.warn("执行时长计数器代理程序执行启动失败错误信息如下，但不影响程序正常:");
             LOG.error(e.getMessage());

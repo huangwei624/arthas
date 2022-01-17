@@ -46,6 +46,10 @@ public class TimerClassVisitor extends ClassVisitor {
             return mv;
         }
 
+        if (name.contains("hello")) {
+            System.out.println("==" + name + "==");
+        }
+
         if(className == null){
             return mv;
         }
