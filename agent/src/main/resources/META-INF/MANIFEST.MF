@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Created-By: wei.huangw
+Can-Redefine-Classes: false
+Can-Retransform-Classes: true
+Premain-Class: org.onedata.agent.AgentStarter
+Agent-Class: org.onedata.agent.AgentStarter
+
